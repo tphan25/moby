@@ -322,3 +322,12 @@ func (s *imageRouter) postImagesPrune(ctx context.Context, w http.ResponseWriter
 	}
 	return httputils.WriteJSON(w, http.StatusOK, pruneReport)
 }
+
+// Handles POST request from the client library at the route /images/makecache
+func (s *imageRouter) postImageMakeCache(ctx context.Context, w http.ResponseWriter, r *http.Request, vars map[string]string) error {
+	result, err := s.backend.ImageMakeCache()
+	if err != nil {
+		return err
+	}
+	return httputils.WriteJSON(w, http.StatusOK, result)
+}

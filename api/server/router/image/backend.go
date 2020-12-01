@@ -26,6 +26,7 @@ type imageBackend interface {
 	LookupImage(name string) (*types.ImageInspect, error)
 	TagImage(imageName, repository, tag string) (string, error)
 	ImagesPrune(ctx context.Context, pruneFilters filters.Args) (*types.ImagesPruneReport, error)
+	ImageMakeCache() (*types.ImageMakeCacheResult, error)
 }
 
 type importExportBackend interface {

@@ -633,3 +633,8 @@ type BuildCachePruneOptions struct {
 	KeepStorage int64
 	Filters     filters.Args
 }
+
+// ImageMakeCacheResult holds response to makecache
+type ImageMakeCacheResult struct {
+	Success bool
+}

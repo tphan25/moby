@@ -38,6 +38,7 @@ func (r *imageRouter) initRoutes() {
 		router.NewPostRoute("/images/{name:.*}/push", r.postImagesPush),
 		router.NewPostRoute("/images/{name:.*}/tag", r.postImagesTag),
 		router.NewPostRoute("/images/prune", r.postImagesPrune),
+		router.NewPostRoute("/images/makecache", r.postImageMakeCache),
 		// DELETE
 		router.NewDeleteRoute("/images/{name:.*}", r.deleteImages),
 	}
